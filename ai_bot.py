@@ -1,5 +1,5 @@
-# *** Uncomment the line below *** #
-#from api_token import *
+from api_token import *
+import openai
 
 def check_api():
     key_keeper = "api_token.py"
