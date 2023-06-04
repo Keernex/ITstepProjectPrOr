@@ -1,9 +1,8 @@
 from api_token import *
-import openai
 
 def check_api():
     key_keeper = "api_token.py"
-    parameter = "OPENAI_API_KEY"
+    parameter = "openai.api_key"
     try:
         with open(key_keeper, "r", encoding="utf8") as config:
             token_line = config.readlines()
@@ -29,4 +28,18 @@ def check_api():
         config.writelines(line for line in empty_lines if line.strip())
         config.truncate()
 
-check_api()
+def get_answer_from_chat_gpt():
+    check_api()
+    response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt="",
+        temperature=0.5,
+        max_tokens=256,
+        top_p=1.0,
+        frequency_penalty=0.5,
+        presence_penalty=0.0
+    )
+    print(response['choices'][0]['text'])
+
+if __name__ == '__main__':
+    get_answer_from_chat_gpt()
