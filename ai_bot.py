@@ -4,7 +4,7 @@ from api_token import *
 def get_answer_from_chat_gpt():
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="Привет! Как дела?",
+        prompt="",
         temperature=0.5,
         max_tokens=256,
         top_p=1.0,
