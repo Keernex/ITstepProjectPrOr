@@ -6,12 +6,9 @@ parameter = "openai.api_key"
 
 def check_api():
     api_key = str(input("Enter your 'OpenAI' API-Key: "))
-    with open(key_keeper, "+a", encoding="utf8") as config:
-        token_line = config.readlines()
-        if len(token_line) >= 0:
-            config.write("\n")
-            config.write(f"{parameter} = '{api_key}'")
-            print("TOKEN was added successfully.")
+    with open(key_keeper, "a", encoding="utf8") as config:
+        config.write(f"\n{parameter} = '{api_key}'")
+        print("TOKEN was added successfully.")
     with open(key_keeper, "r+", encoding="utf8") as config:
         empty_lines = config.readlines()
         config.seek(0)
