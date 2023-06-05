@@ -9,6 +9,7 @@ def check_api():
     with open(key_keeper, "a", encoding="utf8") as config:
         config.write(f"\n{parameter} = '{api_key}'")
         print("TOKEN was added successfully.")
+
     with open(key_keeper, "r+", encoding="utf8") as config:
         empty_lines = config.readlines()
         config.seek(0)
