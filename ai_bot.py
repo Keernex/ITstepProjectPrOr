@@ -1,8 +1,9 @@
 import os
+import openai
 from api_token import *
 
 key_keeper = "api_token.py"
-parameter = "openai.api_key"
+parameter = "OPENAI_API_KEY"
 
 def check_api():
     api_key = str(input("Enter your 'OpenAI' API-Key: "))
@@ -17,6 +18,7 @@ def check_api():
         config.truncate()
 
 def get_answer_from_chat_gpt():
+    openai.api_key = eval(parameter)
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt="",
@@ -35,6 +37,7 @@ def connect_to_openai():
               if parameter not in content:
                   check_api()
               else:
+                  exec(content)
                   get_answer_from_chat_gpt()
 
 if __name__ == '__main__':
