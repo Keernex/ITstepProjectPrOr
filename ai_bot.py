@@ -23,7 +23,7 @@ def get_answer_from_chat_gpt():
         model="text-davinci-003",
         prompt="",
         temperature=0.5,
-        max_tokens=256,
+        max_tokens=1000,
         top_p=1.0,
         frequency_penalty=0.5,
         presence_penalty=0.0
