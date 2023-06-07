@@ -37,7 +37,7 @@ def check_api():
             config.writelines(line for line in empty_lines if line.strip())
             config.truncate()
     else:
-        mid_print_er['text'] = 'Токен недійсний'
+        mid_print_er['text'] = 'TOKEN недійсний'
 
 def get_answer_from_chat_gpt(master):
     openai.api_key = eval(parameter)
@@ -62,7 +62,6 @@ def connect_to_openai(master):
                   exec(content)
                   get_answer_from_chat_gpt(master)
 
-
 def check_task():
     t1=mid_task1.get("1.0", "end")
     t2=mid_task2.get("1.0", "end")
@@ -71,8 +70,8 @@ def check_task():
     t5=mid_task5.get("1.0", "end")
     t=[t1,t2,t3,t4,t5]
     for i in range(len(t)):
-        if len(t[i]) < 30:
-            mid_print_er['text'] = f"Текст у питанні {i+1} менший за 30 символів напиши більш розгорнуту відповідь."
+        if len(t[i]) < 10:
+            mid_print_er['text'] = f"Текст у питанні {i+1} менший за 10 символів напиши більш розгорнуту відповідь."
             return 0
             break
     mid_print_er['text'] = ""
@@ -89,7 +88,7 @@ top_name_pr.place(x=0,y=0)
 top_name_sz=Label(ss,text="Засновник тесту Максим Вернадський",font="12")
 top_name_sz.place(x=0,y=20)
 #api token
-top_name_apitok=Label(ss,text="Введіть свій Api-Token",font="32")
+top_name_apitok=Label(ss,text="Введіть свій API-Token",font="32")
 top_name_apitok.place(x=350,y=20)
 top_input_apitok=Entry(ss,font="18",width=30)
 top_input_apitok.place(x=355,y=40)
@@ -132,7 +131,7 @@ mid_task5.place(x=10,y=800)
 mid_print_v=Label(ss,text="",bg="#fff",anchor="nw",font="18",width=40,height=30,wraplength=340, justify=LEFT)
 mid_print_v.place(x=400,y=120)
 #error
-mid_print_er=Label(ss,text="",bg="#fff",color=red,anchor="nw",font="18",width=40,height=5,wraplength=340, justify=LEFT)
+mid_print_er=Label(ss,text="",bg="#fff",anchor="nw",font="18",width=40,height=5,wraplength=340, justify=LEFT)
 mid_print_er.place(x=400,y=700)
 #bottom
 botton_buttom=Button(ss,text="Відправити",bg="#fff",font="20",command=check_task)
