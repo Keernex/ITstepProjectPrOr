@@ -45,7 +45,7 @@ def check_api():
             config.writelines(line for line in empty_lines if line.strip())
             config.truncate()
     else:
-        mid_print_er['text'] = 'Токен недійсний'
+        mid_print_er['text'] = 'TOKEN invalid'
 
 def get_answer_from_chat_gpt(master):
     openai.api_key = eval(parameter)
