@@ -24,7 +24,6 @@ def authorize_with_api(token):
 def check_api():
     api_key = top_input_apitok.get()
     if authorize_with_api(api_key):
-        
         with open(key_keeper, "r", encoding="utf8") as config:
             lines = config.readlines()
         cleaned_lines = []
@@ -33,7 +32,6 @@ def check_api():
                 cleaned_lines.append(line)
             else:
                 cleaned_lines.append('\n')
-
         with open(key_keeper, "w", encoding="utf8") as config:
             config.writelines(cleaned_lines)
 
