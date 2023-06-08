@@ -80,7 +80,7 @@ def check_task():
     t=[t1,t2,t3,t4,t5]
     for i in range(len(t)):
         if len(t[i]) < 10:
-            mid_print_er['text'] = f"Текст у питанні {i+1} менший за 30 символів напиши більш розгорнуту відповідь."
+            mid_print_er['text'] = f"Текст у питанні {i+1} менший за 10 символів напиши більш розгорнуту відповідь."
             return 0
             break
     mid_print_er['text'] = ""
