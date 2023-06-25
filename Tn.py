@@ -49,16 +49,14 @@ def check_api():
 
 def get_answer_from_chat_gpt(master):
     openai.api_key = eval(parameter)
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=master,
-        temperature=0.5,
-        max_tokens=1000,
-        top_p=1.0,
-        frequency_penalty=0.5,
-        presence_penalty=0.0
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "Chat GPt, you check people for professional orientation, your task is to analyze the questions and answers to them, after which you have to make a detailed analysis in Ukrainian.This analysis should include an answer, which profession is more suitable for the user, and pay attention to writing literacy."},
+            {"role": "user", "content": master}
+        ]
     )
-    mid_print_v['text'] = response['choices'][0]['text']
+    mid_print_v['text'] = response.choices[0].message.content
 
 def connect_to_openai(master):
     if os.path.isfile(key_keeper):
@@ -90,7 +88,7 @@ def check_task():
 def input_master_m(t):
     global Task
     master_m = "Chat GPt, you check people for professional orientation, your task is to analyze the questions and answers to them, after which you have to make a detailed analysis in Ukrainian.This analysis should include an answer, which profession is more suitable for the user, and pay attention to writing literacy."
-    master = master_m + "(Question 1):" + Task[0] + "(Answer 1):" + t[0] + "(Question 2):"+ Task[1] + "(Answer 2):" + t[1] + "(Question 3):" + Task[2] + "(Answer 3):" + t[2] + "(Question 4):" + Task[3] + "(Answer 4):" + t[3] + "(Question 5):" + Task[4] + "(Answer 5):" + t[4]
+    master = "(Question 1):" + Task[0] + "(Answer 1):" + t[0] + "(Question 2):"+ Task[1] + "(Answer 2):" + t[1] + "(Question 3):" + Task[2] + "(Answer 3):" + t[2] + "(Question 4):" + Task[3] + "(Answer 4):" + t[3] + "(Question 5):" + Task[4] + "(Answer 5):" + t[4]
     connect_to_openai(master)
     return 0
 #top
