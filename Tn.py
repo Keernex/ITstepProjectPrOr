@@ -96,8 +96,6 @@ def input_master_m(t):
 #top
 top_name_pr=Label(ss,text="Тест про професійна придатність",font="32")
 top_name_pr.place(x=0,y=0)
-top_name_sz=Label(ss,text="Засновник тесту Максим Вернадський",font="12")
-top_name_sz.place(x=0,y=20)
 #api token
 top_name_apitok=Label(ss,text="Введіть свій API-Token",font="32")
 top_name_apitok.place(x=400,y=20)
