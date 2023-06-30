@@ -14,12 +14,20 @@ ____
 Треба встановити:
 
 Пайтон
-(https://www.python.org/downloads/)
+
+Сілка на встановку -> (https://www.python.org/downloads/)
+
 Текинтер
+
+Сілка на встановку -> (https://www.python.org/downloads/)
 
 Опен АІ
 
+Сілка на встановку -> (https://www.python.org/downloads/)
+
 Кастом текінтер
+
+Сілка на встановку -> (https://www.python.org/downloads/)
 
 ## Використання
 Щоб він запрацював.
