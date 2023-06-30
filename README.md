@@ -17,9 +17,9 @@ ____
 
 Сілка на встановку -> (https://www.python.org/downloads/)
 
-Текинтер
+*Текинтер
 
-Сілка на встановку -> (https://www.python.org/downloads/)
+Він іде разом з пайтоном
 
 Опен АІ
 
