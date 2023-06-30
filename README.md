@@ -15,7 +15,7 @@ ___Треба встановити:___
 
 + **Пайтон**
 
-Сілка на встановку -> (https://www.python.org/downloads/)
+Сілка на встановку -> (Python](https://www.python.org/downloads/))
 
 + **Текинтер**
 
@@ -23,11 +23,11 @@ ___Треба встановити:___
 
 + **Опен АІ**
 
-Сілка на встановку -> (https://www.python.org/downloads/)
+Сілка на встановку -> (Python)
 
 + **Кастом текінтер**
 
-Сілка на встановку -> ([https://www.python.org/downloads/](https://github.com/TomSchimansky/CustomTkinter))
+Сілка на встановку -> (CustomTkinter](https://github.com/TomSchimansky/CustomTkinter))
 
 ## Використання
 **Щоб він запрацював**
