@@ -27,7 +27,7 @@ ___Треба встановити:___
 
 + **Кастом текінтер**
 
-Сілка на встановку -> (https://www.python.org/downloads/)
+Сілка на встановку -> ([https://www.python.org/downloads/](https://github.com/TomSchimansky/CustomTkinter))
 
 ## Використання
 **Щоб він запрацював**
