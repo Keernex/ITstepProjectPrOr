@@ -29,6 +29,10 @@ ___Треба встановити:___
 
 Сілка на встановку -> [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter)
 
++ **Api Key**
+
+Сілка де можно взяти -> [Api Key](https://platform.openai.com/docs/quickstart/build-your-application)
+
 ## Використання
 **Щоб він запрацював:**
 
