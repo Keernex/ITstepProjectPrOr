@@ -255,9 +255,3 @@ button_end.place(relx=0.5, rely=0.85, anchor=ctk.CENTER)
 
 
 app.mainloop()
-              else:
-                  exec(content)
-                  get_answer_from_chat_gpt()
-
-if __name__ == '__main__':
-    connect_to_openai()
