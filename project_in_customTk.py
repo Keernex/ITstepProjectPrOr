@@ -72,18 +72,16 @@ def check_api():
 
 def get_answer_from_chat_gpt(master):
     openai.api_key = eval(parameter)
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=master,
-        temperature=0.5,
-        max_tokens=1000,
-        top_p=1.0,
-        frequency_penalty=0.5,
-        presence_penalty=0.0
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "Chat GPt, you check people for professional orientation, your task is to analyze the questions and answers to them, after which you have to make a detailed analysis in Ukrainian.This analysis should include an answer, which profession is more suitable for the user, and pay attention to writing literacy."},
+            {"role": "user", "content": master}
+        ]
     )
     answer_gpt_chat.configure(state="normal")
     answer_gpt_chat.delete("1.0", "end")
-    answer_gpt_chat.insert("1.0", response['choices'][0]['text'])
+    answer_gpt_chat.insert("1.0", response.choices[0].message.content)
     answer_gpt_chat.configure(state="disabled")
 
 def connect_to_openai(master):
