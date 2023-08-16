@@ -6,10 +6,6 @@ import re
 import customtkinter as ctk
 from PIL import Image
 
-from chat_gpt import *
-from input_api_token import *
-from check_key import *
-
 ctk.set_appearance_mode("System")
 app = ctk.CTk()
 #app.geometry("1100x750")
@@ -33,7 +29,6 @@ array_counter = 0
 key_keeper = "api_token.py"
 parameter = "OPENAI_API_KEY"
 
-'''
 def authorize_with_api(token):
     headers = {'Authorization': f'Bearer {token}'}
     response = requests.get('https://api.openai.com/v1/models', headers=headers)
@@ -99,7 +94,7 @@ def connect_to_openai(master):
                   exec(content)
                   get_answer_from_chat_gpt(master)
                   return 0
-'''
+
 def print_answer_gpt_chat():
     global array_task
     global array_answer
@@ -163,23 +158,23 @@ def counter():
 
 
 #images
-image_chat = ctk.CTkImage(Image.open("images/chat_gpt_im.png"),size=(100,100))
+image_chat = ctk.CTkImage(Image.open("chat_gpt_im.png"),size=(100,100))
 image_top_chat = ctk.CTkLabel(app,text="",width=100,height=100,fg_color=None, image=image_chat)
 image_top_chat.place(relx=0.44, rely=0.1, anchor=ctk.CENTER)
 
-image_python = ctk.CTkImage(Image.open("images/python_im.png"),size=(100,100))
+image_python = ctk.CTkImage(Image.open("python_im.png"),size=(100,100))
 image_top_python = ctk.CTkLabel(app,text="",width=100,height=100,fg_color=None, image=image_python)
 image_top_python.place(relx=0.56, rely=0.1, anchor=ctk.CENTER)
 
-image_bottom_telegram = ctk.CTkImage(Image.open("images/telegram_im.png"),size=(50,50))
+image_bottom_telegram = ctk.CTkImage(Image.open("telegram_im.png"),size=(50,50))
 image_bottom_telegram = ctk.CTkLabel(app,text="",width=50,height=50,fg_color=None, image=image_bottom_telegram)
 image_bottom_telegram.place(relx=0.95, rely=0.95, anchor=ctk.CENTER)
 
-image_bottom_instagram = ctk.CTkImage(Image.open("images/instagram_im.png"),size=(45,45))
+image_bottom_instagram = ctk.CTkImage(Image.open("instagram_im.png"),size=(45,45))
 image_bottom_instagram = ctk.CTkLabel(app,text="",width=50,height=50,fg_color=None, image=image_bottom_instagram)
 image_bottom_instagram.place(relx=0.9, rely=0.95, anchor=ctk.CENTER)
 
-image_bottom_spotify = ctk.CTkImage(Image.open("images/spotify_im.png"),size=(55,55))
+image_bottom_spotify = ctk.CTkImage(Image.open("spotify_im.png"),size=(55,55))
 image_bottom_spotify = ctk.CTkLabel(app,text="",width=50,height=50,fg_color=None, image=image_bottom_spotify)
 image_bottom_spotify.place(relx=0.85, rely=0.95, anchor=ctk.CENTER)
 
@@ -254,5 +249,7 @@ label_error.place(relx=0.715, rely=0.84, anchor=ctk.CENTER)
 #end
 button_end = ctk.CTkButton(app, text="Go for testing",width=150, height = 50,font=('Open Sans', 20), fg_color="#393E46",command=counter)
 button_end.place(relx=0.5, rely=0.85, anchor=ctk.CENTER)
+
+
 
 app.mainloop()
