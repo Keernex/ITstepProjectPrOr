@@ -1,1 +1,1 @@
-# *** This is a Dependency for the API-Key from OpenAI -> Please do NOT Edit *** #
+OPENAI_API_KEY = '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'
